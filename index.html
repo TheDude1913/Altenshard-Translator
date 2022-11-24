@@ -1,0 +1,205 @@
+<html>
+    <body>
+        <p>input english word or altenshardian word (is it doesn't work i probably haven't added the word yet) in all 
+            lowercase and press the transalte button.
+         Does not work with multiple words yet</p>
+
+        <input type="text" id="word" value="insert word">
+        <button onclick="Translate()">Translate</button>
+
+        <p id="translation">translation should apear here</p>
+
+        <script type="text/javascript">
+            var dict = {};
+
+            // for copy and pasting perposes: dict[""] = "";
+
+                        // A English
+                        dict["a"] = "a";
+                        dict["about"] = "augro";
+                        dict["albatross"] = "albatros";
+                        dict["alive"] = "lubending";
+                        dict["all"] = "alen";
+                        dict["also"] = "ouch";
+                        dict["and"] = "bund";
+                        dict["are"] = "eris";
+                        dict["arrow"] = "pifyl";
+                        dict["as"] = "zaz";
+                        dict["at"] = "et";
+
+                        // B English
+                        dict["banana"] = "loracht";
+                        dict["be"] = "hen";
+                        dict["because"] = "winot";
+                        dict["bow"] = "boogun";
+                        dict["but"] = "abe";
+                        dict["by"] = "nov";
+
+                        // C English
+                        dict["can"] = "kunn";
+                        dict["come"] = "con";
+                        dict["coming"] = "conmet";
+                        dict["could"] = "corzing";
+
+                        // D English
+                        dict["day"] = "rag";
+                        dict["dead"] = "toot";
+                        dict["do"] = "tuna";
+                        dict["drizzle"] = "dripple";
+
+                        // E English
+
+                        // F English
+                        dict["find"] = "dioven";
+                        dict["first"] = "eineyt";
+                        dict["for"] = "feare";
+                        dict["from"] = "von";
+                        dict["fun"] = "engoy";
+
+                        // G English
+                        dict["get"] = "beco";
+                        dict["give"] = "oceb";
+                        dict["go"] = "zroov";
+                        dict["grass"] = "gryss";
+
+                        // H English
+                        dict["have"] = "habebe";
+                        dict["he"] = "err";
+                        dict["hear"] = "harn";
+                        dict["here"] = "hiri";
+                        dict["hello"] = "hallo";
+                        dict["help"] = "geltich";
+                        dict["her"] = "fei";
+                        dict["his"] = "sein";
+                        dict["house"] = "hausay";
+                        dict["how"] = "veiy";
+
+                        // I English
+                        dict["i"] = "iche";
+                        dict["if"] = "iff";
+                        dict["in"] = "im";
+                        dict["into"] = "dinein";
+                        dict["it"] = "ig";
+                        dict["its"] = "igzing";
+                        dict["it's"] = "igzing";
+
+                        // J English
+                        dict["just"] = "nori";
+
+                        // K English
+                        dict["know"] = "bibraim";
+
+                        // L English
+                        dict["living"] = "lebendinges";
+                        dict["life"] = "luben";
+                        dict["like"] = "weiy";
+                        dict["look"] = "esscowl";
+
+                        // M English
+                        dict["make"] = "emank";
+                        dict["man"] = "munn";
+                        dict["many"] = "ving";
+                        dict["me"] = "nyo";
+                        dict["more"] = "meh";
+                        dict["my"] = "nya";
+
+                        // N English
+                        dict["new"] = "mu";
+                        dict["no"] = "nien";
+                        dict["not"] = "nich";
+                        dict["now"] = "jezb";
+
+                        // O English
+                        dict["of"] = "vone";
+                        dict["on"] = "oy";
+                        dict["one"] = "einey";
+                        dict["oops"] = "neinops";
+                        dict["or"] = "odor";
+                        dict["other"] = "undra";
+                        dict["our"] = "anseg";
+                        dict["out"] = "auz";
+
+                        // P English
+                        dict["people"] = "luenas";
+
+                        // Q English
+
+                        // R English
+
+                        // S English
+                        dict["say"] = "sagane";
+                        dict["see"] = "sevhan";
+                        dict["she"] = "ferr";
+                        dict["shield"] = "esschield";
+                        dict["should"] = "zallt";
+                        dict["so"] = "al";
+                        dict["some"] = "eigine";
+                        dict["sword"] = "schwert";
+
+                        // T English
+                        dict["take"] = "nahmon";
+                        dict["than"] = "ulz";
+                        dict["that"] = "dois";
+                        dict["the"] = "da";
+                        dict["their"] = "ihr";
+                        dict["them"] = "siden";
+                        dict["then"] = "sidem";
+                        dict["there"] = "fork";
+                        dict["these"] = "deez";
+                        dict["they"] = "sigh";
+                        dict["thing"] = "sangg";
+                        dict["think"] = "dank";
+                        dict["this"] = "thas";
+                        dict["time"] = "zienk";
+                        dict["to"] = "zuco";
+                        dict["too"] = "auchy";
+                        dict["two"] = "zveiney";
+
+                        // U English
+                        dict["unicorn"] = "einhorn";
+                        dict["up"] = "ope";
+                        dict["use"] = "use";
+
+                        // V English
+
+                        // W English
+                        dict["want"] = "waldin";
+                        dict["way"] = "wag";
+                        dict["we"] = "vire";
+                        dict["well"] = "gust";
+                        dict["with"] = "moitens";
+                        dict["will"] = "wirgle";
+                        dict["what"] = "wick";
+                        dict["when"] = "wiju";
+                        dict["which"] = "vald";
+                        dict["who"] = "wert";
+                        dict["would"] = "dorden";
+
+                        // X English
+
+                        // Y English
+                        dict["year"] = "jarind";
+                        dict["yes"] = "jan";
+                        dict["you"] = "dea";
+                        dict["your"] = "deamur";
+
+                        // Z English
+
+            function Translate ()
+            {
+                var word = document.getElementById("word").value;
+                document.getElementById("translation").innerHTML = dict[word];
+            }
+
+            window.onload = function ()
+            {
+                for (var key in dict)
+                {
+                    var value = dict[key];
+
+                    dict[value] = key;
+                }
+            }
+        </script>
+    </body>
+</html>
