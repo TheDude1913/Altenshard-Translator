@@ -9,6 +9,8 @@
 
         <p id="translation">translation should apear here</p>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
         <script type="text/javascript">
             var dict = {};
 
@@ -32,6 +34,8 @@
                         dict["be"] = "hen";
                         dict["because"] = "winot";
                         dict["bow"] = "boogun";
+                        dict["break"] = "drugencrucht";
+                        dict["build"] = "bau";
                         dict["but"] = "abe";
                         dict["by"] = "nov";
 
@@ -45,9 +49,12 @@
                         dict["day"] = "rag";
                         dict["dead"] = "toot";
                         dict["do"] = "tuna";
+                        dict["drink"] = "tankk";
                         dict["drizzle"] = "dripple";
 
                         // E English
+                        dict["eat"] = "schlauch";
+                        dict["eat (formal)"] = "schlafat";
 
                         // F English
                         dict["find"] = "dioven";
@@ -78,12 +85,15 @@
                         dict["i"] = "iche";
                         dict["if"] = "iff";
                         dict["in"] = "im";
+                        dict["is"] = "ev";
                         dict["into"] = "dinein";
                         dict["it"] = "ig";
                         dict["its"] = "igzing";
                         dict["it's"] = "igzing";
-
+                        dict[""] = "";
+            
                         // J English
+                        dict["jump"] = "aufeig";
                         dict["just"] = "nori";
 
                         // K English
@@ -125,6 +135,7 @@
                         // Q English
 
                         // R English
+                        dict["run"] = "loof";
 
                         // S English
                         dict["say"] = "sagane";
@@ -138,6 +149,7 @@
 
                         // T English
                         dict["take"] = "nahmon";
+                        dict["talk"] = "udderhalt";
                         dict["than"] = "ulz";
                         dict["that"] = "dois";
                         dict["the"] = "da";
@@ -164,6 +176,7 @@
 
                         // W English
                         dict["want"] = "waldin";
+                        dict["walk"] = "langloof";
                         dict["way"] = "wag";
                         dict["we"] = "vire";
                         dict["well"] = "gust";
@@ -173,6 +186,7 @@
                         dict["when"] = "wiju";
                         dict["which"] = "vald";
                         dict["who"] = "wert";
+                        dict["why"] = "warm";
                         dict["would"] = "dorden";
 
                         // X English
@@ -187,8 +201,18 @@
 
             function Translate ()
             {
-                var word = document.getElementById("word").value;
-                document.getElementById("translation").innerHTML = dict[word];
+                var words = document.getElementById("word").value;
+                var wordArray = words.split(" ");
+
+                document.getElementById("translation").innerHTML = null;
+
+                for (let x = 0; x < wordArray.length; x++) {
+                    const y = wordArray[x];
+
+                    console.log(y);
+
+                    document.getElementById("translation").append(dict[y] + " ");
+                }
             }
 
             window.onload = function ()
